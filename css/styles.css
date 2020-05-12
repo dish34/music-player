@@ -1,0 +1,348 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-dark-blue: #0c1027;
+
+  --color-orange: orange;
+
+  --color-white: white;
+  --color-white-blue: #ebf2fc;
+  --color-white-grey: #e1e2e3;
+
+  --color-light-blue: #12193e;
+  --color-blue-green: rgb(101, 253, 203);
+}
+body {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+}
+/* Navbar */
+header {
+  /* border-bottom: 1px solid white; */
+  margin-bottom: 30px;
+}
+header > nav {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+#icon-img {
+  margin: 0px 2px 0px 50px;
+}
+#icon-img i {
+  font-size: 4rem;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+#logo-block {
+  height: 50px;
+  width: 90px;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0px 2px;
+}
+#logo-block p {
+  display: inline;
+  font-weight: bold;
+  margin: 0px 5px 0px 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#nav-title {
+  margin: 15px 50px 10px 25px;
+  font-weight: 1.3rem;
+  vertical-align: super;
+}
+/* search bar */
+#search {
+  display: inline-block;
+  margin-left: auto;
+  vertical-align: super;
+}
+#search-box {
+  display: inline-block;
+  width: 250px;
+  background-color: var(--color-light-blue);
+  height: 40px;
+  border-radius: 5px;
+}
+#search-box input {
+  width: 170px;
+  background-color: var(--color-light-blue);
+  border: none;
+  padding: 6px;
+  height: inherit;
+  /* cursor: pointer; */
+  position: static;
+  color: orange;
+}
+#search-box i {
+  font-size: 20px;
+  padding: 5px;
+}
+/* Notificaton Icon */
+#notification i {
+  font-size: 1.5rem;
+  margin: 20px;
+}
+/* profile pic */
+#profile-pic {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-image: url(../images/dis.jpg);
+  background-size: cover;
+  margin-bottom: -5px;
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: var(--color-white);
+}
+a:active {
+  color: var(--color-orange);
+}
+#profile-pic:active {
+  border-color: var(--color-orange);
+}
+/* container */
+#container {
+  margin: 30px;
+}
+/* Left side */
+.left-side {
+  width: 850px;
+  vertical-align: top;
+}
+/* Carousel section */
+#carousel {
+  position: relative;
+  height: 250px;
+  width: 700px;
+  margin: 5px;
+}
+#carousel > div {
+  position: absolute;
+  height: 200px;
+  width: 250px;
+  display: inline-block;
+}
+#carousel #img-1 {
+  top: 20px;
+  left: 15px;
+  background-image: url(../images/welcome.jpg);
+  background-size: cover;
+  opacity: 1;
+}
+#carousel #img-2 {
+  top: 20px;
+  left: 300px;
+  background-image: url(../images/moana.jpg);
+  background-size: cover;
+  opacity: 1;
+}
+#carousel #img-3 {
+  background-image: url(../images/spotify.jpg);
+  background-size: cover;
+  top: 20px;
+  left: 590px;
+  opacity: 1;
+}
+#img-1:hover {
+  height: 250px;
+  width: 350px;
+  box-shadow: grey;
+  transition: linear 0.2s;
+  margin-top: -25px;
+  margin-left: -15px;
+  opacity: 0.5;
+  z-index: 1;
+}
+#img-2:hover {
+  height: 250px;
+  width: 400px;
+  transition: linear 0.2s;
+  margin-top: -25px;
+  margin-left: -35px;
+  z-index: 1;
+}
+#img-3:hover {
+  height: 250px;
+  width: 350px;
+  box-shadow: grey;
+  transition: linear 0.2s;
+  margin-top: -25px;
+  margin-left: -40px;
+  z-index: 1;
+}
+/* Queue */
+#queue {
+  height: 500px;
+  width: 350px;
+  /* border: 1px solid white; */
+  margin-left: auto;
+  margin-right: 50px;
+  display: inline-block;
+  float: right;
+}
+.inline-block {
+  display: inline-block;
+}
+.queue-text {
+  margin-right: 230px;
+}
+/* Queue link which displys the selection list */
+#queue-link i {
+  font-size: small;
+}
+#queue-link button {
+  background-color: transparent;
+  border: none;
+  color: var(--color-blue-green);
+}
+#queue-arrow {
+  position: absolute;
+  height: auto;
+  width: 200px;
+  background-color: var(--color-white);
+  right: 0px;
+  display: none;
+  transition: all 0.2s;
+  color: var(--color-light-blue);
+}
+ul {
+  list-style: none;
+}
+#queue-arrow ul li {
+  border-bottom: 1px solid var(--color-dark-blue);
+  padding: 10px 8px;
+}
+/* Queue list */
+#queue-list {
+  margin: 25px 5px 5px 5px;
+  height: 600px;
+  width: auto;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+#queue-list::-webkit-scrollbar {
+  display: none;
+}
+/* Playlist images */
+.q-img {
+  height: 35px;
+  width: 35px;
+  margin: 2px 15px;
+  vertical-align: top;
+}
+.q-img-1 {
+  background-image: url(../images/rock1.jpg);
+  background-size: cover;
+}
+.q-img-2 {
+  background-image: url(../images/rock2.jpg);
+  background-size: cover;
+}
+.q-img-3 {
+  background-image: url(../images/rock3.jpg);
+  background-size: cover;
+}
+.q-img-4 {
+  background-image: url(../images/rock4.jpg);
+  background-size: cover;
+}
+.q-img-5 {
+  background-image: url(../images/rock5.jpg);
+  background-size: cover;
+}
+.q-img-6 {
+  background-image: url(../images/rock7.jpg);
+  background-size: cover;
+}
+.song-name {
+  width: 90px;
+  vertical-align: baseline;
+}
+.upper-text {
+  font-size: 1.2rem;
+}
+.heart {
+  margin-left: 109px;
+  color: var(--color-blue-green);
+}
+.number {
+  vertical-align: middle;
+  /* color: var(--color-blue-green); */
+}
+#queue-list li {
+  margin: 10px;
+}
+#li1 > .number::after {
+  content: "01";
+}
+#li2 > .number::after {
+  content: "🥁";
+}
+#li3 > .number::after {
+  content: "03";
+}
+#li4 > .number::after {
+  content: "04";
+}
+#li5 > .number::after {
+  content: "05";
+}
+#li6 > .number::after {
+  content: "06";
+}
+/* Latest Release Songs */
+.release-songs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.release-songs > div {
+  height: 100px;
+  width: 400px;
+  /* background-color: wheat; */
+  margin: 10px;
+}
+.r-img {
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+}
+#r-img-1 {
+  background-image: url(../images/rock5.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.r-text {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+.r-font {
+  margin-top: 25px;
+  font-size: 1.3rem;
+}
+.r-text > span {
+  font-size: 0.8rem;
+  color: var(--color-white-grey);
+}
+.r-icon {
+  float: right;
+}

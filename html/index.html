@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9406d845dc.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Music Player</title>
+    <script>
+
+        function imageHover(pic) {
+            // alert("helo")
+            let img1 = document.querySelector("#img-1");
+            let img2 = document.querySelector("#img-2");
+            let img3 = document.querySelector("#img-3");
+            img1.style.opacity = "0.5";
+            img2.style.opacity = "0.5";
+            img3.style.opacity = "0.5";
+            let img = document.querySelector(`#${pic.id}`);
+            img.style.opacity = "1";
+        }
+        function imageOut(pic) {
+            // alert("helo");
+            let img1 = document.querySelector("#img-1");
+            let img2 = document.querySelector("#img-2");
+            let img3 = document.querySelector("#img-3");
+            img1.style.opacity = "1";
+            img2.style.opacity = "1";
+            img3.style.opacity = "1";
+            let img = document.querySelector(`#${pic.id}`);
+            img.style.opacity = "1";
+        }
+        function displayDiv() {
+            let qdiv = document.querySelector("#queue-arrow");
+            if (qdiv.style.display === "none") {
+                qdiv.style.display = "block";
+            }
+            else {
+                qdiv.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#"><span id="icon-img"><i class="fab fa-napster"></i></span></a>
+
+
+            <div id="logo-block">
+                <span id="logo">Ninja</span>
+                <p>Studio</p>
+            </div>
+            <span id="nav-title">Favourites</span>
+            <div id="search">
+                <div id="search-box">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <input type="text" placeholder="search">
+                    <a href="#"><i class="fas fa-microphone"></i></a>
+                </div>
+            </div>
+            <span id="notification">
+                <a href="#"><i class="far fa-bell"></i></a>
+            </span>
+            <span>
+                <a href="#" id="profile-pic"></a>
+            </span>
+        </nav>
+    </header>
+    <main id="container">
+        <div class="inline-block left-side">
+            <div id="carousel">
+                <div id="img-1" onmouseover="imageHover(this)" onmouseout="imageOut(this)"></div>
+                <div id="img-2" onmouseover="imageHover(this)" onmouseout="imageOut(this)"></div>
+                <div id="img-3" onmouseover="imageHover(this)" onmouseout="imageOut(this)"></div>
+            </div>
+            <div id="latest-release">
+                <h3>Latest Release</h3>
+                <div class="release-songs">
+                    <div>
+                        <div id="r-img-1" class="r-img"></div>
+                        <div class="r-text r-font">Onism <br><span>AUG 11,2017</span></div>
+                        <div class="r-text r-icon">... <br> <br>&nbsp; 4.44 </div>
+                    </div>
+                    <!--  -->
+                    <div>
+                        <div id="r-img-1" class="r-img"></div>
+                        <div class="r-text r-font">Onism <br><span>AUG 11,2017</span></div>
+                        <div class="r-text r-icon">... <br> <br>&nbsp; 4.44 </div>
+                    </div>
+                    <div>
+                        <div id="r-img-1" class="r-img"></div>
+                        <div class="r-text r-font">Onism <br><span>AUG 11,2017</span></div>
+                        <div class="r-text r-icon">... <br> <br>&nbsp; 4.44 </div>
+                    </div>
+                    <div>
+                        <div id="r-img-1" class="r-img"></div>
+                        <div class="r-text r-font">Onism <br><span>AUG 11,2017</span></div>
+                        <div class="r-text r-icon">... <br> <br>&nbsp; 4.44 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="queue">
+
+            <h3 class="inline-block queue-text">Queue</h3>
+            <a id="queue-link" href="#"><button onclick="displayDiv()">Queue <i class="fas fa-arrow-down"></i></button>
+            </a>
+            <div style="position:relative">
+                <div id="queue-arrow">
+                    <ul>
+                        <li>Playlist</li>
+                        <li>Favoruite Playlist</li>
+                    </ul>
+                </div>
+            </div>
+            <ul id="queue-list">
+                <li id="li1">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-1">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li id="li2">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-2">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Squad</span><br>
+                            Fab
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li id="li3">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-3">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Rock</span><br>
+                            AWw
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li id="li4">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-4">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Jazz</span><br>
+                            Sweet
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li id="li5">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-5">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li id="li6">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-6">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li id="li4">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-4">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li id="li3">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-3">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li id="li2">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-2">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li id="li1">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-1">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li id="li4">
+                    <span class="number"></span>
+                    <span class="inline-block q-img q-img-4">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li>
+                    <span class="number">01</span>
+                    <span class="inline-block q-img q-img-6">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li>
+                    <span class="number">01</span>
+                    <span class="inline-block q-img q-img-5">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+                <li>
+                    <span class="number">01</span>
+                    <span class="inline-block q-img q-img-3">
+
+                    </span>
+                    <span>
+                        <div class="inline-block song-name">
+                            <span class="upper-text">Mirage</span><br>
+                            Ebase
+                        </div>
+                    </span>
+                    <span class="heart"><i class="far fa-heart"></i></span>
+                </li>
+            </ul>
+        </div>
+
+
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
