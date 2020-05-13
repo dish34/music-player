@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9406d845dc.js" crossorigin="anonymous"></script>
-
+    <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/listen-music-6-686681.png"
+        type="image/x-icon">
     <link rel="stylesheet" href="../css/styles.css">
     <title>Music Player</title>
     <script>
@@ -41,10 +42,26 @@
                 qdiv.style.display = "none";
             }
         }
+        function displayIcon(e) {
+            let ealldiv = document.querySelectorAll(`.dot-items`);
+            for (let i = 0; i < 4; i++) {
+                if (e.id != i) {
+                    ealldiv[i].style.display = "none";
+                }
+            }
+            let ediv = document.querySelectorAll(`.dot-items`)[e.id];
+            if (ediv.style.display === "none") {
+                ediv.style.display = "block";
+            }
+            else {
+                ediv.style.display = "none";
+            }
+        }
     </script>
 </head>
 
 <body>
+    <!-- Header and Navbar -->
     <header>
         <nav>
             <a href="#"><span id="icon-img"><i class="fab fa-napster"></i></span></a>
@@ -77,33 +94,175 @@
                 <div id="img-2" onmouseover="imageHover(this)" onmouseout="imageOut(this)"></div>
                 <div id="img-3" onmouseover="imageHover(this)" onmouseout="imageOut(this)"></div>
             </div>
+            <!-- Latest Release Songs  -->
+
             <div id="latest-release">
                 <h3>Latest Release</h3>
                 <div class="release-songs">
                     <div>
                         <div id="r-img-1" class="r-img"></div>
                         <div class="r-text r-font">Onism <br><span>AUG 11,2017</span></div>
-                        <div class="r-text r-icon">... <br> <br>&nbsp; 4.44 </div>
+                        <div class="r-text r-icon"><button><span id="0" class="dot-icon" onclick="displayIcon(this)"
+                                    style="font-size:2rem;">...</span> </button><br> <br>&nbsp; 4.44 </div>
+
+                        <div class="dot-items">
+                            <ul id="dot-lists">
+                                <li>&nbsp;<i class="fas fa-play"></i> &nbsp; Play Now</li>
+                                <li>&nbsp;<i class="fas fa-plus"></i> &nbsp; Add to Queue</li>
+                                <li>&nbsp;<i class="fab fa-gratipay"></i> &nbsp; Add to Favourites</li>
+                                <li>&nbsp;<i class="fas fa-info-circle"></i> &nbsp; Get info</li>
+
+                            </ul>
+                        </div>
                     </div>
                     <!--  -->
                     <div>
                         <div id="r-img-1" class="r-img"></div>
                         <div class="r-text r-font">Onism <br><span>AUG 11,2017</span></div>
-                        <div class="r-text r-icon">... <br> <br>&nbsp; 4.44 </div>
+                        <div class="r-text r-icon"><button><span id="1" class="dot-icon" onclick="displayIcon(this)"
+                                    style="font-size:2rem;">...</span> </button> <br> <br>&nbsp; 4.44 </div>
+                        <div class="dot-items">
+                            <ul id="dot-lists">
+                                <li>&nbsp;<i class="fas fa-play"></i> &nbsp; Play Now</li>
+                                <li>&nbsp;<i class="fas fa-plus"></i> &nbsp; Add to Queue</li>
+                                <li>&nbsp;<i class="fab fa-gratipay"></i> &nbsp; Add to Favourites</li>
+                                <li>&nbsp;<i class="fas fa-info-circle"></i> &nbsp; Get info</li>
+
+                            </ul>
+                        </div>
                     </div>
                     <div>
                         <div id="r-img-1" class="r-img"></div>
                         <div class="r-text r-font">Onism <br><span>AUG 11,2017</span></div>
-                        <div class="r-text r-icon">... <br> <br>&nbsp; 4.44 </div>
+                        <div class="r-text r-icon">
+                            <button>
+                                <span id="2" class="dot-icon" onclick="displayIcon(this)"
+                                    style="font-size:2rem;">...</span>
+                            </button> <br> <br>&nbsp; 4.44 </div>
+                        <div class="dot-items">
+                            <ul id="dot-lists">
+                                <li>&nbsp;<i class="fas fa-play"></i> &nbsp; Play Now</li>
+                                <li>&nbsp;<i class="fas fa-plus"></i> &nbsp; Add to Queue</li>
+                                <li>&nbsp;<i class="fab fa-gratipay"></i> &nbsp; Add to Favourites</li>
+                                <li>&nbsp;<i class="fas fa-info-circle"></i> &nbsp; Get info</li>
+
+                            </ul>
+                        </div>
                     </div>
                     <div>
                         <div id="r-img-1" class="r-img"></div>
                         <div class="r-text r-font">Onism <br><span>AUG 11,2017</span></div>
-                        <div class="r-text r-icon">... <br> <br>&nbsp; 4.44 </div>
+                        <div class="r-text r-icon"><button><span id="3" class="dot-icon" onclick="displayIcon(this)"
+                                    style="font-size:2rem;">...</span> </button> <br> <br>&nbsp; 4.44 </div>
+                        <div class="dot-items">
+                            <ul id="dot-lists">
+                                <li>&nbsp;<i class="fas fa-play"></i> &nbsp; Play Now</li>
+                                <li>&nbsp;<i class="fas fa-plus"></i> &nbsp; Add to Queue</li>
+                                <li>&nbsp;<i class="fab fa-gratipay"></i> &nbsp; Add to Favourites</li>
+                                <li>&nbsp;<i class="fas fa-info-circle"></i> &nbsp; Get info</li>
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Popular Artists -->
+            <div id="popular-artists">
+                <h3 class="h3-text">Popular Artists</h3>
+                <div id="artists-images">
+                    <div>
+                        <figure>
+                            <img src="../images/edsheen.jpg" alt="" height="115px" width="115px">
+                            <figcaption class="artists-name">Ed Sheen</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="../images/arijitsingh.jpg" alt="" height="115px" width="115px">
+                            <figcaption class="artists-name">Arjit Singh</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="../images/selenagomez.jpg" alt="" height="115px" width="115px">
+                            <figcaption class="artists-name">Selena Gomez</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="../images/shreyagoshal.jpg" alt="" height="115px" width="115px">
+                            <figcaption class="artists-name">Shreya Ghoshal</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="../images/charlieputh.jpg" alt="" height="115px" width="115px">
+                            <figcaption class="artists-name">Charlie Puth</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="../images/brunomars.jpg" alt="" height="115px" width="115px">
+                            <figcaption class="artists-name">Bruno Mars</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Playsist Section -->
+            <div id="playlist-section">
+                <div id="station-icon">
+
+                    <i class="fas fa-drum"></i>
+                    <figcaption class="artists-name">Stations</figcaption>
+
+                </div>
+                <div class="station-container">
+
+                    <img src="../images/rock3.jpg" alt="Bollywood" height="90px" width="90px">
+                    <span class="station-name">Chill</span>
+
+                </div>
+                <div class="station-container">
+                    <img src="../images/rock4.jpg" alt="Bollywood" height="90px" width="90px">
+                    <span class="station-name">Mood</span>
+                </div>
+                <div class="station-container">
+                    <img src="../images/rock5.jpg" alt="Bollywood" height="90px" width="90px">
+                    <span class="station-name">Bollywood</span>
+                </div>
+                <div class="station-container">
+                    <img src="../images/rock2.jpg" alt="Bollywood" height="90px" width="90px">
+                    <span class="station-name">Bollywood</span>
+                </div>
+                <div class="station-container">
+                    <img src="../images/rock6.jpg" alt="Bollywood" height="90px" width="90px">
+                    <span class="station-name">Bollywood</span>
+                </div>
+                <div class="station-container">
+                    <img src="../images/rock8.jpg" alt="Bollywood" height="90px" width="90px">
+                    <span class="station-name">Bollywood</span>
+                </div>
+            </div>
+
+            <!-- Music Type -->
+            <div id="music-type">
+                <div class="music-container" id="m-1">
+                    <span class="music-type-name">Party</span>
+                </div>
+                <div class="music-container" id="m-2">
+                    <span class="music-type-name">Road Trip</span>
+                </div>
+                <div class="music-container" id="m-3">
+                    <span class="music-type-name">Acoustic</span>
+                </div>
+            </div>
         </div>
+
+
+
+        <!-- LEft side of carousel -->
         <div id="queue">
 
             <h3 class="inline-block queue-text">Queue</h3>
