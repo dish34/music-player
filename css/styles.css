@@ -534,5 +534,11 @@ img {
     display: none !important;
   }
 }
-/* @media screen and (min-width: 0px) and (max-width: 912px) {
-} */
+@media screen and (min-width: 0px) and (max-width: 912px) {
+  .col-sm-disp {
+    display: none !important;
+  }
+  .col-sm-wrap {
+    flex-wrap: wrap !important;
+  }
+}
