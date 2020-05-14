@@ -57,6 +57,19 @@
                 ediv.style.display = "none";
             }
         }
+        window.addEventListener("scroll", function (event) {
+
+            var top = this.scrollY,
+                left = this.scrollX;
+            var header = document.querySelector('header');
+            if (top != 0) {
+                header.style.opacity = "0.5";
+                header.style.backgroundColor = "orange";
+            }
+            else {
+                header.style.opacity = "1";
+            }
+        }, false);
     </script>
 </head>
 
@@ -87,8 +100,13 @@
             </span>
         </nav>
     </header>
+    <div style="height:70px;">
+
+    </div>
+    <!-- Main Content Of Music Player -->
     <main id="container">
-        <div class="inline-block left-side">
+        <!-- Left side of the main container -->
+        <div class="inline-block left-side col-md-12">
             <div id="carousel">
                 <div id="img-1" onmouseover="imageHover(this)" onmouseout="imageOut(this)"></div>
                 <div id="img-2" onmouseover="imageHover(this)" onmouseout="imageOut(this)"></div>
@@ -96,7 +114,7 @@
             </div>
             <!-- Latest Release Songs  -->
 
-            <div id="latest-release">
+            <div id="latest-release col-md-12">
                 <h3>Latest Release</h3>
                 <div class="release-songs">
                     <div>
@@ -168,7 +186,7 @@
             </div>
 
             <!-- Popular Artists -->
-            <div id="popular-artists">
+            <div id="popular-artists" class="col-md-12">
                 <h3 class="h3-text">Popular Artists</h3>
                 <div id="artists-images">
                     <div>
@@ -258,12 +276,90 @@
                     <span class="music-type-name">Acoustic</span>
                 </div>
             </div>
+            <!-- Music Language -->
+            <h3>Latest English</h3>
+            <div class="music-language">
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock2.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+
+                </div>
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock4.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+
+                </div>
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock3.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+
+                </div>
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock1.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+
+                </div>
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock8.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+                </div>
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock5.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+                </div>
+            </div>
+
+            <!-- Latest Hindi -->
+            <h3>Latest Hindi</h3>
+            <div class="music-language">
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock2.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+
+                </div>
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock4.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+
+                </div>
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock3.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+
+                </div>
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock1.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+
+                </div>
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock8.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+                </div>
+                <div class="language-songs">
+                    <img class="inline-block" src="../images/rock5.jpg" alt="" height="100px" width="100px">
+                    <h3>Onism</h3>
+                    <p class="text-muted">AUG 11,2017</p>
+                </div>
+            </div>
+
         </div>
 
 
 
-        <!-- LEft side of carousel -->
-        <div id="queue">
+        <!-- LEft side of carousel: Playlist Queue -->
+        <div id="queue" class="col-disp col-md-3">
 
             <h3 class="inline-block queue-text">Queue</h3>
             <a id="queue-link" href="#"><button onclick="displayDiv()">Queue <i class="fas fa-arrow-down"></i></button>
