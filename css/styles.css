@@ -449,7 +449,7 @@ img {
 }
 /* Music Type */
 #music-type {
-  height: 215px;
+  height: auto;
   width: auto;
   display: flex;
   justify-content: space-between;
