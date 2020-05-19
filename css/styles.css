@@ -29,10 +29,14 @@
   --color-light-blue: #89bdbb;
   --color-dark-blue: #002b2e;
   --color-dark-blue: #002b2e;
+
+  --color-red-pink: #fc4444;
 }
 body {
   background-color: var(--color-dark-blue);
   color: var(--color-white);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 /* Navbar */
 header {
@@ -41,6 +45,7 @@ header {
   position: fixed;
   opacity: 1;
   background-color: red;
+  z-index: 100;
 }
 header > nav {
   /* background-color: transparent; */
@@ -81,9 +86,15 @@ header > nav {
   vertical-align: super;
   margin-right: auto;
 }
+/* Queue Button to show queue for mobile devices*/
+#nav-playlist {
+  display: none;
+  color: var(--color-red-pink);
+  margin-right: auto;
+  font-size: 1.3em;
+}
 /* search bar */
 #search {
-  display: inline-block;
   margin-left: auto;
   vertical-align: super;
 }
@@ -104,9 +115,16 @@ header > nav {
   position: static;
   color: orange;
 }
+.color-pink {
+  color: var(--color-red-pink);
+}
 #search-box i {
   font-size: 20px;
   padding: 5px;
+}
+/* Search box microphone */
+.far {
+  color: var(--color-red-pink);
 }
 /* Notificaton Icon */
 #notification i {
@@ -214,9 +232,10 @@ a:active {
   width: 350px;
   /* border: 1px solid white; */
   margin-left: 1vw;
-  display: inline-block;
+  /* display: inline-block; */
   float: right;
   position: fixed;
+  right: 0px;
 }
 .inline-block {
   display: inline-block;
@@ -295,9 +314,11 @@ ul {
 .song-name {
   width: 90px;
   vertical-align: baseline;
+  color: grey;
 }
 .upper-text {
   font-size: 1.2rem;
+  color: white;
 }
 .heart {
   margin-left: 109px;
@@ -315,6 +336,7 @@ ul {
 }
 #li2 > .number::after {
   content: "🥁";
+  font-size: 0.9em;
 }
 #li3 > .number::after {
   content: "03";
@@ -343,9 +365,28 @@ ul {
   margin: 10px;
 }
 .r-img {
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
   display: inline-block;
+}
+.r-img:hover {
+  opacity: 0.5;
+  /* position: absolute;
+  height: 50px;
+  width: 50px; */
+  z-index: 100;
+  background: transparent url("../images/rock1.jpg") no-repeat;
+  background-image: url(../images/rock1.jpg);
+
+  /* position: absolute; */
+}
+.r-img:hover .hover-img {
+  display: block;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  z-index: 200;
+  background: transparent url("../images/rock1.jpg") no-repeat;
 }
 #r-img-1 {
   background-image: url(../images/rock5.jpg);
@@ -375,7 +416,7 @@ ul {
   height: auto;
   width: 160px;
   border-bottom: 1px solid black;
-  background-color: burlywood;
+  background-color: white;
   top: 30px;
   right: 35px;
   z-index: 2;
@@ -384,8 +425,15 @@ ul {
 #dot-lists li {
   padding: 10px 8px;
   border-bottom: 1px solid black;
+  color: black;
+}
+#dot-lists li i {
+  color: var(--color-blue-green);
 }
 /* Popular Artists */
+#popular-artists {
+  margin-top: 20px;
+}
 .h3-text {
   margin-bottom: 7px;
 }
@@ -417,12 +465,13 @@ img {
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  background-color: var(--color-light-blue);
+  background-color: darkslategray;
   height: 150px;
   width: auto;
 }
 #playlist-section i {
   font-size: 5rem;
+  margin-left: 10px;
 }
 #playlist-section img {
   border-radius: 50%;
@@ -444,8 +493,22 @@ img {
 #station-icon {
   height: 100px;
   width: 100px;
-  background-color: var(--color-orange);
-  margin-left: 5px;
+  background-color: var(--color-red-pink);
+  margin-left: 10px;
+  clip-path: polygon(
+    0% 15%,
+    15% 15%,
+    15% 0%,
+    85% 0%,
+    85% 15%,
+    100% 15%,
+    100% 85%,
+    85% 85%,
+    85% 100%,
+    15% 100%,
+    15% 85%,
+    0% 85%
+  );
 }
 /* Music Type */
 #music-type {
@@ -496,7 +559,123 @@ img {
 .language-songs {
   height: 215px;
 }
-@media screen and (min-width: 912px) and (max-width: 1310px) {
+/* Music Player */
+footer {
+  background-color: #000000;
+  height: 75px;
+  width: 100%;
+  position: fixed;
+}
+.music-player {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  bottom: 0;
+}
+.footer-disp {
+  display: none;
+}
+.music-player-icon {
+  display: flex;
+  align-items: center;
+}
+.music-player-icon span {
+  margin: 5px;
+}
+.music-player-icon i {
+  margin: 5px;
+  font-size: 1.3em;
+}
+#music-player-image {
+  display: inline-block;
+  height: 55px;
+  width: 55px;
+  background-image: url(../images/rock5.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#music-info {
+  display: inline-block;
+  height: 55px;
+  width: 55px;
+}
+.info-text {
+  font-size: 0.7em;
+}
+.player {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+.player i {
+  margin-right: 10px;
+  font-size: 1.4em;
+}
+.fontawesome-icon {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 20px;
+}
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+.volume > i {
+  font-size: 1.3em;
+  margin: 5px;
+}
+.volume > span {
+  margin: 5px;
+}
+.timer {
+  display: inline-block;
+  background-color: lightgrey;
+  position: relative;
+}
+.timer-dimention {
+  height: 5px;
+  width: 160px;
+}
+.timer-d {
+  height: 5px;
+  width: 100px;
+}
+.timer-covered {
+  display: inline-block;
+  /* margin-left: 50%; */
+  background-color: var(--color-blue-green);
+  position: absolute;
+}
+.timer-width {
+  width: 50%;
+  height: 5px;
+}
+.timer-circle {
+  display: inline-block;
+  position: absolute;
+  /* border: 5px solid aquamarine; */
+  border-radius: 50%;
+  color: red;
+  z-index: 5;
+  margin-left: 50%;
+  background-color: var(--color-red-pink);
+  /* vertical-align: middle; */
+}
+.timer-circle-dimention {
+  height: 15px;
+  width: 15px;
+  top: -5px;
+}
+.timer-circle-d {
+  height: 15px;
+  width: 15px;
+  top: -5px;
+}
+a {
+  color: white;
+}
+@media screen and (min-width: 1225px) and (max-width: 1310px) {
   .col-md-1 {
     width: 8.33%;
   }
@@ -534,11 +713,20 @@ img {
     display: none !important;
   }
 }
-@media screen and (min-width: 0px) and (max-width: 912px) {
-  .col-sm-disp {
-    display: none !important;
+@media screen and (min-width: 0px) and (max-width: 1225px) {
+  .col-sm-no-disp {
+    display: none;
   }
   .col-sm-wrap {
     flex-wrap: wrap !important;
   }
+  .col-sm-show-inline {
+    display: inline !important;
+  }
+  .col-md-12 {
+    width: 100% !important;
+  }
+  /* .col-disp {
+    display: none !important;
+  } */
 }

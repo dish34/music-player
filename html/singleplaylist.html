@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9406d845dc.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/listen-music-6-686681.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="../css/platlist.css">
+    <title>Music Player</title>
+    <script>
+
+        function imageHover(pic) {
+            // alert("helo")
+            let img1 = document.querySelector("#img-1");
+            let img2 = document.querySelector("#img-2");
+            let img3 = document.querySelector("#img-3");
+            img1.style.opacity = "0.5";
+            img2.style.opacity = "0.5";
+            img3.style.opacity = "0.5";
+            let img = document.querySelector(`#${pic.id}`);
+            img.style.opacity = "1";
+        }
+        function imageOut(pic) {
+            // alert("helo");
+            let img1 = document.querySelector("#img-1");
+            let img2 = document.querySelector("#img-2");
+            let img3 = document.querySelector("#img-3");
+            img1.style.opacity = "1";
+            img2.style.opacity = "1";
+            img3.style.opacity = "1";
+            let img = document.querySelector(`#${pic.id}`);
+            img.style.opacity = "1";
+        }
+        function displayDiv() {
+            let qdiv = document.querySelector("#queue-arrow");
+            if (qdiv.style.display === "none") {
+                qdiv.style.display = "block";
+            }
+            else {
+                qdiv.style.display = "none";
+            }
+        }
+        function displayIcon(e) {
+            let ealldiv = document.querySelectorAll(`.dot-items`);
+            for (let i = 0; i < 4; i++) {
+                if (e.id != i) {
+                    ealldiv[i].style.display = "none";
+                }
+            }
+            let ediv = document.querySelectorAll(`.dot-items`)[e.id];
+            if (ediv.style.display === "none") {
+                ediv.style.display = "block";
+            }
+            else {
+                ediv.style.display = "none";
+            }
+        }
+        window.addEventListener("scroll", function (event) {
+
+            var top = this.scrollY,
+                left = this.scrollX;
+            var header = document.querySelector('header');
+            var nav = document.querySelector('nav');
+            if (top != 0) {
+                header.style.opacity = "0.7";
+                nav.style.backgroundColor = "#1B2628";
+            }
+            else {
+                header.style.opacity = "1";
+                nav.style.backgroundColor = "transparent";
+            }
+        }, false);
+        function displayQueue() {
+            let queue = document.querySelector("#queue");
+            queue.style.display = "inline-block";
+            queue.style.zIndex = "80";
+            queue.style.backgroundColor = "white";
+            queue.style.color = "black";
+        }
+        function displayMusicbox() {
+            let mdiv = document.querySelector("footer");
+            if (mdiv.style.display === "none") {
+                mdiv.style.display = "flex";
+            }
+            else {
+                mdiv.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header and Navbar -->
+    <header>
+        <nav>
+            <a href="#"><span id="icon-img"><i class="fab fa-napster"></i></span></a>
+
+
+            <div id="logo-block">
+                <span id="logo">Ninja</span>
+                <p class="color-pink">Studio</p>
+            </div>
+            <span id="nav-title" class="col-sm-no-disp">Favourites</span>
+            <span id="nav-playlist" class="col-sm-show-inline" onclick="displayQueue()">Queue</span>
+            <div id="search">
+                <div id="search-box">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <input type="text" placeholder="search">
+                    <a href="#"><i class="fas fa-microphone"></i></a>
+                </div>
+            </div>
+            <span id="notification">
+                <a href="#"><i class="far fa-bell"></i></a>
+            </span>
+            <span>
+                <a href="#" id="profile-pic"></a>
+            </span>
+        </nav>
+    </header>
+    <div style="height:70px;">
+
+    </div>
+    <!-- Main Content Of Music Player -->
+    <!-- Main contents -->
+    <main>
+        <div class="container">
+            <div id="single-playlist">
+                <div class="img-playlist">
+                </div>
+                <div id="playlist-info">
+                    <h2 class="single-playlist-name">Vector</h2>
+                    <p class="text-muted followers">851 Followers</p>
+                    <p class="text-muted">British Band</p>
+                    <p class="text-muted">
+                        Vector is the fifth studio album by British progressive metal band Haken. It was released on 26
+                        October 2018 through Inside Out Music. It is the shortest studio album by the band and the first
+                        with a duration of less than one hour.
+
+                    </p>
+                    <div id="button-play">
+                        <button id="play-all">
+                            Play All
+                        </button>
+                        <p class="button-caption">247 Tracks|128 Albums</p>
+                    </div>
+
+                    <p class="follow-text inline-block">Follow</p>
+                </div>
+            </div>
+        </div>
+        <div id="right-side">
+            <h3 class="artists-title inline-block">Similar Artits</h3>
+            <p class="text-view-all font-small text-muted">View All</p>
+            <div class="similar-artists">
+                <div class="similar-artists-container">
+                    <div class="img-artists">
+                    </div>
+                    <div class="artist-title">
+                        <h3>Imagine Dragons</h3>
+                        <p class="text-muted">Pos Band</p>
+                    </div>
+                    <div class="dot-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="overflow" class="icon_svg-stroke" stroke-width="1.5" stroke="#666" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M5,14 C3.8954305,14 3,13.1045695 3,12 C3,10.8954305 3.8954305,10 5,10 C6.1045695,10 7,10.8954305 7,12 C7,13.1045695 6.1045695,14 5,14 Z M12,14 C10.8954305,14 10,13.1045695 10,12 C10,10.8954305 10.8954305,10 12,10 C13.1045695,10 14,10.8954305 14,12 C14,13.1045695 13.1045695,14 12,14 Z M19,14 C17.8954305,14 17,13.1045695 17,12 C17,10.8954305 17.8954305,10 19,10 C20.1045695,10 21,10.8954305 21,12 C21,13.1045695 20.1045695,14 19,14 Z">
+                                </path>
+                            </g>
+                        </svg>
+                        <br>
+                        <span class="text-muted">
+                            14.35
+                        </span>
+                    </div>
+                </div>
+
+                <div class="similar-artists-container">
+                    <div class="img-artists">
+                    </div>
+                    <div class="artist-title">
+                        <h3>Imagine Dragons</h3>
+                        <p class="text-muted">Pos Band</p>
+                    </div>
+                    <div class="dot-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="overflow" class="icon_svg-stroke" stroke-width="1.5" stroke="#666" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M5,14 C3.8954305,14 3,13.1045695 3,12 C3,10.8954305 3.8954305,10 5,10 C6.1045695,10 7,10.8954305 7,12 C7,13.1045695 6.1045695,14 5,14 Z M12,14 C10.8954305,14 10,13.1045695 10,12 C10,10.8954305 10.8954305,10 12,10 C13.1045695,10 14,10.8954305 14,12 C14,13.1045695 13.1045695,14 12,14 Z M19,14 C17.8954305,14 17,13.1045695 17,12 C17,10.8954305 17.8954305,10 19,10 C20.1045695,10 21,10.8954305 21,12 C21,13.1045695 20.1045695,14 19,14 Z">
+                                </path>
+                            </g>
+                        </svg>
+                        <br>
+                        <span class="text-muted">
+                            14.35
+                        </span>
+                    </div>
+                </div>
+
+                <div class="similar-artists-container">
+                    <div class="img-artists">
+                    </div>
+                    <div class="artist-title">
+                        <h3>Imagine Dragons</h3>
+                        <p class="text-muted">Pos Band</p>
+                    </div>
+                    <div class="dot-icon">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="overflow" class="icon_svg-stroke" stroke-width="1.5" stroke="#666" fill="none"
+                                fill-rule="evenodd">
+                                <path
+                                    d="M5,14 C3.8954305,14 3,13.1045695 3,12 C3,10.8954305 3.8954305,10 5,10 C6.1045695,10 7,10.8954305 7,12 C7,13.1045695 6.1045695,14 5,14 Z M12,14 C10.8954305,14 10,13.1045695 10,12 C10,10.8954305 10.8954305,10 12,10 C13.1045695,10 14,10.8954305 14,12 C14,13.1045695 13.1045695,14 12,14 Z M19,14 C17.8954305,14 17,13.1045695 17,12 C17,10.8954305 17.8954305,10 19,10 C20.1045695,10 21,10.8954305 21,12 C21,13.1045695 20.1045695,14 19,14 Z">
+                                </path>
+                            </g>
+                        </svg>
+                        <br>
+                        <span class="text-muted">
+                            14.35
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- Music Player at bottom  -->
+    <footer class="music-player">
+        <div class="music-player-icon">
+            <span id="music-player-image"></span>
+            <span id="music-info">Imgine <br> <span class="text-muted info-text"> john Lennom</span></span>
+            <i class="far fa-heart"></i>
+            <i class="fas fa-ban"></i>
+        </div>
+        <!-- Music Controller -->
+        <div class="player">
+            <div class="fontawesome-icon">
+                <i class="fas fa-random"></i>
+                <i class="fas fa-caret-left"></i>
+                <i class="far fa-pause-circle"></i>
+                <i class="fas fa-caret-right"></i>
+                <i class="fas fa-redo-alt"></i>
+            </div>
+
+            <div class="break"></div>
+            <div id="">
+                <span class="text-muted info-text">1.39</span>
+                <span id="" class="timer timer-dimention">
+                    <span class="timer-covered timer-width">
+                    </span>
+                    <span class="timer-circle timer-circle-dimention"></span>
+                </span>
+                <span class="text-muted info-text">4.44</span>
+            </div>
+        </div>
+
+        <!-- Volume, device and Playlist controller -->
+        <div class="volume">
+            <i class="fas fa-align-left"></i>
+            <i class="fas fa-desktop"></i>
+            <i class="fas fa-volume-up"></i>
+            <span class="timer timer-d">
+                <span class="timer-covered timer-width">
+                </span>
+                <span class="timer-circle timer-circle-d"></span>
+            </span>
+            <i class="fas fa-expand-alt"></i>
+    </footer>
+</body>
+
+</html>
