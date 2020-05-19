@@ -171,6 +171,7 @@ a:active {
   width: auto;
   margin: 5px;
   display: inline-block;
+  animation: 1s rightcenter;
 }
 #carousel > div {
   position: absolute;
@@ -356,6 +357,7 @@ ul {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  animation: 2s leftcenter;
 }
 .release-songs > div {
   position: relative;
@@ -443,7 +445,7 @@ ul {
 #artists-images {
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin-right: 10px;
 }
 #artists-images > div {
@@ -464,9 +466,9 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   background-color: darkslategray;
-  height: 150px;
+  height: auto;
   width: auto;
 }
 #playlist-section i {
@@ -550,7 +552,7 @@ img {
 }
 /* Music Language */
 .music-language {
-  height: 215px;
+  height: auto;
   width: auto;
   display: flex;
   justify-content: space-between;
@@ -674,6 +676,33 @@ footer {
 }
 a {
   color: white;
+  transition: 1s linear;
+}
+@keyframes rightcenter {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes leftcenter {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 @media screen and (min-width: 1225px) and (max-width: 1310px) {
   .col-md-1 {
@@ -729,4 +758,8 @@ a {
   /* .col-disp {
     display: none !important;
   } */
+  .col-carousel {
+    width: 330px !important;
+    overflow-x: overlay;
+  }
 }
