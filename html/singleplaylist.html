@@ -12,7 +12,6 @@
     <script>
 
         function imageHover(pic) {
-            // alert("helo")
             let img1 = document.querySelector("#img-1");
             let img2 = document.querySelector("#img-2");
             let img3 = document.querySelector("#img-3");
@@ -23,7 +22,6 @@
             img.style.opacity = "1";
         }
         function imageOut(pic) {
-            // alert("helo");
             let img1 = document.querySelector("#img-1");
             let img2 = document.querySelector("#img-2");
             let img3 = document.querySelector("#img-3");
@@ -95,25 +93,29 @@
     <!-- Header and Navbar -->
     <header>
         <nav>
+            <!-- Music Player Icon -->
             <a href="#"><span id="icon-img"><i class="fab fa-napster"></i></span></a>
 
-
+            <!-- Music Player Name -->
             <div id="logo-block">
                 <span id="logo">Ninja</span>
                 <p class="color-pink">Studio</p>
             </div>
             <span id="nav-title" class="col-sm-no-disp">Favourites</span>
             <span id="nav-playlist" class="col-sm-show-inline" onclick="displayQueue()">Queue</span>
-            <div id="search">
+            <!-- Search box -->
+            <div id="search" class="inline-block col-sm-no-disp">
                 <div id="search-box">
                     <a href="#"><i class="fas fa-search"></i></a>
                     <input type="text" placeholder="search">
                     <a href="#"><i class="fas fa-microphone"></i></a>
                 </div>
             </div>
+            <!-- Notification Icon -->
             <span id="notification">
                 <a href="#"><i class="far fa-bell"></i></a>
             </span>
+            <!-- Profile icon -->
             <span>
                 <a href="#" id="profile-pic"></a>
             </span>
@@ -228,6 +230,7 @@
                 </div>
             </div>
         </div>
+        <!-- Right Side -->
         <div id="right-side">
             <h3 class="artists-title inline-block">Similar Artits</h3>
             <p class="text-view-all font-small text-muted">View All</p>
@@ -303,10 +306,11 @@
                         </span>
                     </div>
                 </div>
+                <!-- Recently Played -->
                 <div id="queue" class="inline-block col-dis col-md-3  col-sm-no-disp">
 
-                    <h3 class="inline-block queue-text">Queue</h3>
-                    <a id="queue-link" href="#"><button onclick="displayDiv()">Queue <i
+                    <h3 class="inline-block queue-text">Recently Played</h3>
+                    <a id="queue-link" href="#"><button onclick="displayDiv()">view all <i
                                 class="fas fa-arrow-down"></i></button>
                     </a>
                     <div style="position:relative">
@@ -317,7 +321,9 @@
                             </ul>
                         </div>
                     </div>
+                    <!-- Queue Lists -->
                     <ul id="queue-list">
+                        <!-- List 1 -->
                         <li id="li1">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-1">
@@ -325,12 +331,13 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
+                                    <span class="upper-text upper-text-sm-color">Mirage</span><br>
                                     Ebase
                                 </div>
                             </span>
                             <span class="heart"><i class="far fa-heart"></i></span>
                         </li>
+                        <!-- List 2 -->
                         <li id="li2">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-2">
@@ -338,12 +345,13 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Squad</span><br>
+                                    <span class="upper-text upper-text-sm-color">Squad</span><br>
                                     Fab
                                 </div>
                             </span>
                             <span class="heart"><i class="far fa-heart"></i></span>
                         </li>
+                        <!-- List 3 -->
                         <li id="li3">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-3">
@@ -351,12 +359,13 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Rock</span><br>
+                                    <span class="upper-text upper-text-sm-color">Rock</span><br>
                                     AWw
                                 </div>
                             </span>
                             <span class="heart"><i class="far fa-heart"></i></span>
                         </li>
+                        <!-- List 4 -->
                         <li id="li4">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-4">
@@ -364,12 +373,13 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Jazz</span><br>
+                                    <span class="upper-text upper-text-sm-color">Jazz</span><br>
                                     Sweet
                                 </div>
                             </span>
                             <span class="heart"><i class="far fa-heart"></i></span>
                         </li>
+                        <!-- List 5 -->
                         <li id="li5">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-5">
@@ -377,12 +387,13 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
+                                    <span class="upper-text upper-text-sm-color">Mirage</span><br>
                                     Ebase
                                 </div>
                             </span>
                             <span class="heart"><i class="far fa-heart"></i></span>
                         </li>
+                        <!-- List 6 -->
                         <li id="li6">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-6">
@@ -390,12 +401,13 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
+                                    <span class="upper-text upper-text-sm-color">Mirage</span><br>
                                     Ebase
                                 </div>
                             </span>
                             <span class="heart"><i class="far fa-heart"></i></span>
                         </li>
+                        <!-- List 7 -->
                         <li id="li4">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-4">
@@ -403,12 +415,13 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
+                                    <span class="upper-text upper-text-sm-color">Mirage</span><br>
                                     Ebase
                                 </div>
                             </span>
                             <span class="heart"><i class="far fa-heart"></i></span>
                         </li>
+                        <!-- List 8 -->
                         <li id="li3">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-3">
@@ -416,12 +429,13 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
+                                    <span class="upper-text upper-text-sm-color">Mirage</span><br>
                                     Ebase
                                 </div>
                             </span>
                             <span class="heart"><i class="far fa-heart"></i></span>
                         </li>
+                        <!-- List 8 -->
                         <li id="li2">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-2">
@@ -429,12 +443,13 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
+                                    <span class="upper-text upper-text-sm-color">Mirage</span><br>
                                     Ebase
                                 </div>
                             </span>
                             <span class="heart"><i class="far fa-heart"></i></span>
                         </li>
+                        <!-- List 9 -->
                         <li id="li1">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-1">
@@ -442,12 +457,13 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
+                                    <span class="upper-text upper-text-sm-color">Mirage</span><br>
                                     Ebase
                                 </div>
                             </span>
                             <span class="heart"><i class="far fa-heart"></i></span>
                         </li>
+                        <!-- List 10 -->
                         <li id="li4">
                             <span class="number"></span>
                             <span class="inline-block q-img q-img-4">
@@ -455,46 +471,7 @@
                             </span>
                             <span>
                                 <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
-                                    Ebase
-                                </div>
-                            </span>
-                            <span class="heart"><i class="far fa-heart"></i></span>
-                        </li>
-                        <li>
-                            <span class="number">01</span>
-                            <span class="inline-block q-img q-img-6">
-
-                            </span>
-                            <span>
-                                <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
-                                    Ebase
-                                </div>
-                            </span>
-                            <span class="heart"><i class="far fa-heart"></i></span>
-                        </li>
-                        <li>
-                            <span class="number">01</span>
-                            <span class="inline-block q-img q-img-5">
-
-                            </span>
-                            <span>
-                                <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
-                                    Ebase
-                                </div>
-                            </span>
-                            <span class="heart"><i class="far fa-heart"></i></span>
-                        </li>
-                        <li>
-                            <span class="number">01</span>
-                            <span class="inline-block q-img q-img-3">
-
-                            </span>
-                            <span>
-                                <div class="inline-block song-name">
-                                    <span class="upper-text">Mirage</span><br>
+                                    <span class="upper-text upper-text-sm-color">Mirage</span><br>
                                     Ebase
                                 </div>
                             </span>

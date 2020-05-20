@@ -5,14 +5,6 @@
 }
 :root {
   --color-dark-blue: #0c1027;
-  /* --color-dark-blue: #582f78;
-      --color-dark-blue: #3b1f52;
-      --color-dark-blue: #e7beee;
-      --color-dark-blue: #320b36; */
-
-  /* --color-dark-blue: #659dbd; */
-  /* --color-dark-blue: #5d001d;
-      --color-dark-blue: #ffffff; */
   --color-orange: orange;
 
   --color-text-muted: #6c757d;
@@ -40,7 +32,6 @@ body {
 }
 /* Navbar */
 header {
-  /* border-bottom: 1px solid white; */
   margin-bottom: 30px;
   position: fixed;
   opacity: 1;
@@ -58,9 +49,6 @@ header > nav {
   overflow: hidden;
   top: 0;
   width: 100%;
-}
-
-#icon-img {
 }
 #icon-img i {
   font-size: 4rem;
@@ -236,6 +224,10 @@ button {
   background-color: var(--color-light-blue);
   display: flex;
 }
+.layer-block:hover {
+  color: white;
+  opacity: 0.8;
+}
 .layer-logo {
   height: inherit;
   width: 30px;
@@ -283,7 +275,7 @@ button {
 }
 #right-side .text-view-all {
   display: inline-block;
-  margin-left: auto;
+  float: right;
 }
 .similar-artists {
   display: flex;
@@ -381,7 +373,7 @@ button {
   display: inline-block;
 }
 .queue-text {
-  margin-right: 230px;
+  margin-right: 125px;
 }
 /* Queue link which displys the selection list */
 #queue-link i {
@@ -458,15 +450,15 @@ ul {
 }
 .upper-text {
   font-size: 1.2rem;
-  color: white;
+  color: rgb(119, 241, 235);
 }
 .heart {
   margin-left: 109px;
   color: var(--color-blue-green);
 }
 .number {
-  vertical-align: middle;
-  /* color: var(--color-blue-green); */
+  vertical-align: top;
+  display: inline-block;
 }
 #queue-list li {
   margin: 10px;
